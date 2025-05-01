@@ -249,3 +249,91 @@ input, textarea {
     flex-shrink: 0;
     transition: background-color 0.2s ease;
 }
+
+.bio-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.bio-img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 
+==========================================
+Responsive Design for Mobile and testing in Mac Browswer but using the 
+Developer tools with mobile tester. 
+Target screen widths: 768px and below
+Applies to navigation, forms, images, quiz layout, and tables
+==========================================
+*/
+@media screen and (max-width: 768px) {
+
+    /* Stack the navigation menu vertically and center it */
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    /* Resize form width for narrow screens */
+    form {
+        width: 90%;
+    }
+
+    /* Make project images scale to fit smaller screens */
+    .project-img {
+        max-width: 90%;
+    }
+
+    /* Adjust quiz layout to be fully responsive */
+    .quiz-container,
+    .question-block,
+    .option label {
+        width: 100%;
+        box-sizing: border-box;
+        word-wrap: break-word;
+    }
+
+    /* Stack quiz option contents vertically for readability */
+    .option label {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.95rem;
+    }
+
+    /* Ensure all images stay within container boundaries */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Make tables scrollable horizontally when too wide */
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+    }
+
+    table th, table td {
+        white-space: nowrap;
+    }
+
+    /* Stack bio images vertically on mobile */
+    .bio-images {
+        flex-direction: column;
+        align-items: center;
+    }
+}
